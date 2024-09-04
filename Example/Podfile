@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'libPrinterSDK_Example' do
+  pod 'libPrinterSDK', :path => '../'
+
+  target 'libPrinterSDK_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
