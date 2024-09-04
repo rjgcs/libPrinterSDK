@@ -17,8 +17,12 @@ libPrinterSDK is a software development kit designed for printer operations, off
   s.homepage         = 'https://github.com/rjgcs/libPrinterSDK'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Apple Mac mini intel' => 'rj-gcs10@xprinter.net' }
-  s.source           = { :git => 'https://github.com/rjgcs/libPrinterSDK.git', :tag => "#{s.version}" }
+  s.source           = { :git => 'https://github.com/rjgcs/libPrinterSDK.git', :tag => "#{s.version}"}
   s.ios.deployment_target = '12.0'
+  s.source_files = 'Framework/libPrinterSDK.framework/Headers/*.{h,m}'
+  s.public_header_files = 'Framework/libPrinterSDK.framework/Headers/*.{h}'
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   s.frameworks = 'UIKit', 'CoreBluetooth', 'Foundation', 'CoreGraphics', 'SystemConfiguration'
   s.ios.vendored_frameworks = 'Framework/libPrinterSDK.framework'
