@@ -1,0 +1,6 @@
+framework module libPrinterSDK {
+  umbrella header "libPrinterSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_libPrinterSDK_Example {
+  umbrella header "Pods-libPrinterSDK_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

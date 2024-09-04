@@ -1,0 +1,16 @@
+PODS:
+  - libPrinterSDK (0.1.0)
+
+DEPENDENCIES:
+  - libPrinterSDK (from `../`)
+
+EXTERNAL SOURCES:
+  libPrinterSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  libPrinterSDK: 286dc726970669162e07157538f11a87fae6ce3b
+
+PODFILE CHECKSUM: 542c8047aa8ba87dcde5fe825e9f7d3d9991b859
+
+COCOAPODS: 1.15.2

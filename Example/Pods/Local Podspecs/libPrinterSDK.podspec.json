@@ -1,0 +1,22 @@
+{
+  "name": "libPrinterSDK",
+  "version": "0.1.0",
+  "summary": "A short description of libPrinterSDK.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Apple Mac mini intel/libPrinterSDK",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Apple Mac mini intel": "rj-gcs10@xprinter.net"
+  },
+  "source": {
+    "git": "https://github.com/Apple Mac mini intel/libPrinterSDK.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "libPrinterSDK/Classes/**/*"
+}
