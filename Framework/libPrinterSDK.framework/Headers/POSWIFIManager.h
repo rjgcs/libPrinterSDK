@@ -165,13 +165,31 @@ typedef void (^POSWiFiManagerFoundPrinterBlock)(PrinterProfile *foundPrinter);
 /// @return The copyright string.
 + (NSString *)GetCopyRight;
 
-/// Retrieves the current status of the printer.
+/// Queries the current printer status (normal/out of paper/open cover, etc.).
 /// @param statusBlock The block to execute with the printer status.
+///
+/// | Enum Value                      | Description                            | Hex Value |
+/// |----------------------------------|----------------------------------------|-----------|
+/// | POSPrinterNormal                 | Printer is in normal status            | 0x12      |
+/// | POSPrinterCoverOpened            | Printer cover is opened                | 0x16      |
+/// | POSPrinterPaperEnd               | Printer is out of paper                | 0x32      |
+/// | POSPrinterCoverOpenedAndPaperEnd | Cover is opened and printer is out of paper | 0x36  |
+/// | POSPrinterFeeding                | Printer is feeding paper               | 0x1A      |
+/// | POSPrinterCashBoxOpen            | Cash box is open                       | 0x00      |
+/// | POSPrinterCashBoxClosed          | Cash box is closed                     | 0x01      |
 - (void)printerStatus:(POSWiFiPrinterStatusBlock)statusBlock;
 
-/// Checks the printer's status.
-/// @param type The type of status to check (1: printer status, 2: offline status, 3: error status, 4: paper status).
-/// @param checkBlock The block to execute with the check result.
+/// Queries all printer statuses.
+/// @param type The type of status to check.
+///
+/// | Enum Value                      | Description             | Hex Value |
+/// |----------------------------------|-------------------------|-----------|
+/// | POSPrinterStatusTypePrint        | Print status            | 0x01      |
+/// | POSPrinterStatusTypeOffline      | Offline status          | 0x02      |
+/// | POSPrinterStatusTypeError        | Error status            | 0x03      |
+/// | POSPrinterStatusTypePaper        | Paper transmission status | 0x04      |
+///
+/// @param checkBlock The block to execute with the check results.
 - (void)printerCheck:(int)type checkBlock:(POSWiFiPrinterCheckBlock)checkBlock;
 
 @end

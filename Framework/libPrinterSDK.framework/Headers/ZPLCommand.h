@@ -120,24 +120,65 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSData *)setPageCount:(int)count;
 
 /// Sets a custom font
+///
+/// | ZPL Code Page      | Description                   | Value  |
+/// |--------------------|-------------------------------|--------|
+/// | `CODE_PAGE_USA1`   | USA Code Page 1               | `0`    |
+/// | `CODE_PAGE_USA2`   | USA Code Page 2               | `1`    |
+/// | `CODE_PAGE_UK`     | UK Code Page                   | `2`    |
+/// | `CODE_PAGE_NL`     | Netherlands Code Page          | `3`    |
+/// | `CODE_PAGE_DK`     | Denmark Code Page              | `4`    |
+/// | `CODE_PAGE_SWEDE`  | Sweden Code Page               | `5`    |
+/// | `CODE_PAGE_GER`    | Germany Code Page              | `6`    |
+/// | `CODE_PAGE_FR1`    | France Code Page 1             | `7`    |
+/// | `CODE_PAGE_FR2`    | France Code Page 2             | `8`    |
+/// | `CODE_PAGE_ITA`    | Italy Code Page                | `9`    |
+/// | `CODE_PAGE_ES`     | Spain Code Page                | `10`   |
+/// | `CODE_PAGE_JA`     | Japan Code Page                | `12`   |
+/// | `CODE_PAGE_UTF8`   | UTF-8 Code Page                | `28`   |
+/// | `CODE_PAGE_UTF16_BIG` | UTF-16 Big Endian Code Page  | `29`   |
+/// | `CODE_PAGE_UTF16_LITTLE` | UTF-16 Little Endian Code Page | `30` |
+///
 /// @param fontName The name of the font
 /// @param extension The file extension
 /// @param alias The alias for the font
-/// @param codePage The ZPL code page
+/// @param codePage The ZPL code page (see table above)
 /// @return NSData object representing the command
 + (NSData *)setCustomFont:(NSString *)fontName extension:(NSString *)extension alias:(NSString *)alias codePage:(ZPLCodePage)codePage;
+
 
 /// Sets the string encoding
 /// @param encoding The NSStringEncoding to use
 + (void)setStringEncoding:(NSStringEncoding)encoding;
 
 /// Draws text with specified font
+///
+/// | Font Name        | Description                | Value   |
+/// |------------------|----------------------------|---------|
+/// | `FNT_9_5`        | 9x5 font                   | `0`     |
+/// | `FNT_11_7`       | 11x7 font                  | `1`     |
+/// | `FNT_18_10`      | 18x10 font                 | `2`     |
+/// | `FNT_42_20`      | 42x20 font                 | `3`     |
+/// | `FNT_26_13`      | 26x13 font                 | `4`     |
+/// | `FNT_60_40`      | 60x40 font                 | `5`     |
+/// | `FNT_34_22`      | 34x22 font                 | `6`     |
+/// | `FNT_24_24`      | 24x24 font                 | `7`     |
+/// | `FNT_20_18`      | 20x18 font                 | `8`     |
+/// | `FNT_28_24`      | 28x24 font                 | `9`     |
+/// | `FNT_35_31`      | 35x31 font                 | `10`    |
+/// | `FNT_40_35`      | 40x35 font                 | `11`    |
+/// | `FNT_48_42`      | 48x42 font                 | `12`    |
+/// | `FNT_59_53`      | 59x53 font                 | `13`    |
+/// | `FNT_80_71`      | 80x71 font                 | `14`    |
+/// | `FNT_15_12`      | 15x12 font                 | `15`    |
+///
 /// @param x The x-coordinate
 /// @param y The y-coordinate
-/// @param fontName The ZPLFont to use
+/// @param fontName The ZPLFont to use (see table above)
 /// @param content The text content
 /// @return NSData object representing the command
 + (NSData *)drawTextWithx:(int)x y:(int)y fontName:(ZPLFont)fontName content:(NSString *)content;
+
 
 /// Draws text with specified font and size ratios
 /// @param x The x-coordinate
@@ -150,15 +191,24 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSData *)drawTextWithx:(int)x y:(int)y fontName:(ZPLFont)fontName hRatio:(int)hRatio wRatio:(int)wRatio content:(NSString *)content;
 
 /// Draws text with specified font, rotation, and size ratios
+///
+/// | Rotation Angle | Description        | Value   |
+/// |----------------|--------------------|---------|
+/// | `ROTATION_0`   | 0 degrees          | `0`     |
+/// | `ROTATION_90`  | 90 degrees         | `1`     |
+/// | `ROTATION_180` | 180 degrees        | `2`     |
+/// | `ROTATION_270` | 270 degrees        | `3`     |
+///
 /// @param x The x-coordinate
 /// @param y The y-coordinate
 /// @param fontName The ZPLFont to use
-/// @param rotation The rotation angle
+/// @param rotation The rotation angle (see table above)
 /// @param hRatio The height ratio (1, 2, 3...)
 /// @param wRatio The width ratio (1, 2, 3...)
 /// @param content The text content
 /// @return NSData object representing the command
 + (NSData *)drawTextWithx:(int)x y:(int)y fontName:(ZPLFont)fontName rotation:(ZPLRotation)rotation hRatio:(int)hRatio wRatio:(int)wRatio content:(NSString *)content;
+
 
 /// Draws text with a custom font
 /// @param x The x-coordinate
@@ -189,12 +239,30 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSData *)drawTextWithx:(int)x y:(int)y content:(NSString *)content;
 
 /// Draws a barcode
+///
+/// | Barcode Type | Description       | Value   |
+/// |--------------|-------------------|---------|
+/// | `CODE_TYPE_11`   | Code 11           | `0`     |
+/// | `CODE_TYPE_25`   | Code 25           | `1`     |
+/// | `CODE_TYPE_39`   | Code 39           | `2`     |
+/// | `CODE_TYPE_EAN8` | EAN-8             | `3`     |
+/// | `CODE_TYPE_UPCE` | UPC-E             | `4`     |
+/// | `CODE_TYPE_93`   | Code 93           | `5`     |
+/// | `CODE_TYPE_128`  | Code 128          | `6`     |
+/// | `CODE_TYPE_EAN13`| EAN-13            | `7`     |
+/// | `CODE_TYPE_CODA` | Codabar           | `8`     |
+/// | `CODE_TYPE_MSI`  | MSI Plessey       | `9`     |
+/// | `CODE_TYPE_PLESSEY` | Plessey         | `10`    |
+/// | `CODE_TYPE_UPCEAN` | UPC/EAN          | `11`    |
+/// | `CODE_TYPE_UPCA` | UPC-A             | `12`    |
+///
 /// @param x The x-coordinate
 /// @param y The y-coordinate
-/// @param codeType The type of barcode to draw
+/// @param codeType The type of barcode to draw (see table above)
 /// @param text The content of the barcode
 /// @return NSData object representing the command
 + (NSData *)drawBarcodeWithx:(int)x y:(int)y codeType:(ZPLBarCode)codeType text:(NSString *)text;
+
 
 /// Draws a barcode with specified height
 /// @param x The x-coordinate
@@ -206,15 +274,23 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSData *)drawBarcodeWithx:(int)x y:(int)y codeType:(ZPLBarCode)codeType height:(int)height text:(NSString *)text;
 
 /// Draws a barcode with orientation and other parameters
+///
+/// | HRI Text Position | Description        | Value   |
+/// |-------------------|--------------------|---------|
+/// | `HRI_TEXT_NONE`   | No HRI text        | `0`     |
+/// | `HRI_TEXT_BELOW`  | HRI text below the barcode | `1`     |
+/// | `HRI_TEXT_ABOVE`  | HRI text above the barcode | `2`     |
+///
 /// @param x The x-coordinate
 /// @param y The y-coordinate
-/// @param orientation The orientation of the barcode
+/// @param orientation The orientation of the barcode (see `ZPLRotation` enum)
 /// @param width The width of the barcode modules (1-10)
 /// @param height The height of the barcode
-/// @param hriText The HRI text position
+/// @param hriText The HRI text position (see table above)
 /// @param text The content of the barcode
 /// @return NSData object representing the command
 + (NSData *)drawBarcodeWithx:(int)x y:(int)y orientation:(ZPLRotation)orientation codeType:(ZPLBarCode)codeType width:(int)width height:(int)height hriText:(ZPLHriText)hriText text:(NSString *)text;
+
 
 /// Draws a QR code
 /// @param x The x-coordinate

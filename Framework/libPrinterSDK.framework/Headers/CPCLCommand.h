@@ -105,9 +105,17 @@ typedef NS_ENUM(NSInteger, CPCLAlignment) {
 + (NSData *)setmagWithw:(int)w h:(int)h;
 
 /// Sets the alignment of fields (default: left aligned)
-/// @param alignment The alignment type
+///
+/// | Alignment Type     | Description        | Value   |
+/// |--------------------|--------------------|---------|
+/// | `ALIGNMENT_LEFT`    | Left aligned       | `0`     |
+/// | `ALIGNMENT_CENTER`  | Center aligned     | `1`     |
+/// | `ALIGNMENT_RIGHT`   | Right aligned      | `2`     |
+///
+/// @param alignment The alignment type (see table above)
 /// @return NSData object representing the command
 + (NSData *)setAlignment:(CPCLAlignment)alignment;
+
 
 /// Sets the alignment of fields with a specified end point (default: left aligned)
 /// @param alignment The alignment type
@@ -142,21 +150,45 @@ typedef NS_ENUM(NSInteger, CPCLAlignment) {
 + (NSData *)drawTextWithx:(int)x y:(int)y content:(NSString *)content;
 
 /// Draws text content with specified font
+///
+/// | Font Type | Description  | Value   |
+/// |-----------|---------------|---------|
+/// | `FNT_0`   | Font 0        | `0`     |
+/// | `FNT_1`   | Font 1        | `1`     |
+/// | `FNT_2`   | Font 2        | `2`     |
+/// | `FNT_3`   | Font 3        | `3`     |
+/// | `FNT_4`   | Font 4        | `4`     |
+/// | `FNT_5`   | Font 5        | `5`     |
+/// | `FNT_6`   | Font 6        | `6`     |
+/// | `FNT_7`   | Font 7        | `7`     |
+/// | `FNT_24`  | Font 24       | `24`    |
+/// | `FNT_55`  | Font 55       | `55`    |
+///
 /// @param x The x-coordinate
 /// @param y The y-coordinate
-/// @param font The font type
+/// @param font The font type (see table above)
 /// @param content The text content
 /// @return NSData object representing the command
 + (NSData *)drawTextWithx:(int)x y:(int)y font:(CPCLFont)font content:(NSString *)content;
 
+
 /// Draws text content with specified font and rotation
+///
+/// | Rotation Type | Description    | Value   |
+/// |---------------|----------------|---------|
+/// | `ROTA_0`      | No rotation    | `0`     |
+/// | `ROTA_90`     | 90° rotation   | `1`     |
+/// | `ROTA_180`    | 180° rotation  | `2`     |
+/// | `ROTA_270`    | 270° rotation  | `3`     |
+///
 /// @param x The x-coordinate
 /// @param y The y-coordinate
-/// @param rotation The rotation type
+/// @param rotation The rotation type (see table above)
 /// @param font The font type
 /// @param content The text content
 /// @return NSData object representing the command
 + (NSData *)drawTextWithx:(int)x y:(int)y rotation:(CPCLRotation)rotation font:(CPCLFont)font content:(NSString *)content;
+
 
 /// Indicates the printer to switch to the top of the next page after finishing the current page
 /// @return NSData object representing the command
@@ -167,23 +199,57 @@ typedef NS_ENUM(NSInteger, CPCLAlignment) {
 + (NSData *)print;
 
 /// Draws a barcode
+///
+/// | Barcode Type  | Description    | Value   |
+/// |---------------|----------------|---------|
+/// | `BC_128`      | Code 128       | `0`     |
+/// | `BC_UPCA`     | UPC-A          | `1`     |
+/// | `BC_UPCE`     | UPC-E          | `2`     |
+/// | `BC_EAN13`    | EAN-13         | `3`     |
+/// | `BC_EAN8`     | EAN-8          | `4`     |
+/// | `BC_39`       | Code 39        | `5`     |
+/// | `BC_93`       | Code 93        | `6`     |
+/// | `BC_CODABAR`  | Codabar        | `7`     |
+///
 /// @param x The x-coordinate
 /// @param y The y-coordinate
-/// @param codeType The type of barcode
+/// @param codeType The type of barcode (see table above)
 /// @param height The height of the barcode
 /// @param content The content of the barcode
 /// @return NSData object representing the command
 + (NSData *)drawBarcodeWithx:(int)x y:(int)y codeType:(CPCLBarCode)codeType height:(int)height content:(NSString *)content;
 
+
 /// Draws a barcode with specified height and ratio
+///
+/// | Ratio Type     | Description                | Value   |
+/// |----------------|----------------------------|---------|
+/// | `BCR_RATIO_0`  | No ratio                   | `0`     |
+/// | `BCR_RATIO_1`  | Default ratio              | `1`     |
+/// | `BCR_RATIO_2`  | Ratio 2                    | `2`     |
+/// | `BCR_RATIO_3`  | Ratio 3                    | `3`     |
+/// | `BCR_RATIO_4`  | Ratio 4                    | `4`     |
+/// | `BCR_RATIO_20` | Custom ratio 20            | `20`    |
+/// | `BCR_RATIO_21` | Custom ratio 21            | `21`    |
+/// | `BCR_RATIO_22` | Custom ratio 22            | `22`    |
+/// | `BCR_RATIO_23` | Custom ratio 23            | `23`    |
+/// | `BCR_RATIO_24` | Custom ratio 24            | `24`    |
+/// | `BCR_RATIO_25` | Custom ratio 25            | `25`    |
+/// | `BCR_RATIO_26` | Custom ratio 26            | `26`    |
+/// | `BCR_RATIO_27` | Custom ratio 27            | `27`    |
+/// | `BCR_RATIO_28` | Custom ratio 28            | `28`    |
+/// | `BCR_RATIO_29` | Custom ratio 29            | `29`    |
+/// | `BCR_RATIO_30` | Custom ratio 30            | `30`    |
+///
 /// @param x The x-coordinate
 /// @param y The y-coordinate
 /// @param codeType The type of barcode
 /// @param height The height of the barcode
-/// @param ratio The ratio of wide to narrow bars (default: BCR_RATIO_1)
+/// @param ratio The ratio of wide to narrow bars (see table above)
 /// @param content The content of the barcode
 /// @return NSData object representing the command
 + (NSData *)drawBarcodeWithx:(int)x y:(int)y codeType:(CPCLBarCode)codeType height:(int)height ratio:(CPCLBarCodeRatio)ratio content:(NSString *)content;
+
 
 /// Draws a vertical barcode
 /// @param x The x-coordinate
@@ -221,13 +287,20 @@ typedef NS_ENUM(NSInteger, CPCLAlignment) {
 + (NSData *)drawQRCodeWithx:(int)x y:(int)y content:(NSString *)content;
 
 /// Draws a QR code with specified parameters
+///
+/// | QR Code Mode      | Description          | Value   |
+/// |-------------------|----------------------|---------|
+/// | `CODE_MODE_ORG`    | Original mode        | `1`     |
+/// | `CODE_MODE_ENHANCE`| Enhanced mode        | `2`     |
+///
 /// @param x The x-coordinate
 /// @param y The y-coordinate
-/// @param codeModel The QR code mode
+/// @param codeModel The QR code mode (see table above)
 /// @param cellWidth The size of the cells (1-32, default: 6)
 /// @param content The content of the QR code
 /// @return NSData object representing the command
 + (NSData *)drawQRCodeWithx:(int)x y:(int)y codeModel:(CPCLQRCodeMode)codeModel cellWidth:(int)cellWidth content:(NSString *)content;
+
 
 /// Draws an image
 /// @param x The x-coordinate

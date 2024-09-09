@@ -12,4 +12,5 @@
 #import "ZPLCommand.h"
 #import "CPCLCommand.h"
 #import "KDS_Log.h"
-#endif /* TSCPrinterSDK_h */
+
+#endif

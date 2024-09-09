@@ -12,172 +12,187 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
     BATCH   = 2  ///< Enable auto response status function, returns once after all printing is complete
 };
 
+typedef NS_ENUM(NSInteger, TSPLRotation) {
+    TSPLRotation0 = 0,      ///< No Rotation
+    TSPLRotation90 = 90,    ///< Rotate 90 degrees clockwise
+    TSPLRotation180 = 180,  ///< Rotate 180 degrees clockwise
+    TSPLRotation270 = 270   ///< Rotate 270 degrees clockwise
+};
+
 @interface TSCCommand : NSObject
 
-/// Defines the label width and length in millimeters.
 /// Sets the width and length of the label paper (unit: millimeters)
 /// @param m Label width
 /// @param n Label length
 /// @return Data command
 + (NSData *)sizeBymmWithWidth:(double)m andHeight:(double)n;
 
-/// Defines the label width and length in inches.
 /// Sets the width and length of the label paper (unit: inches)
 /// @param m Label width
 /// @param n Label length
 /// @return Data command
 + (NSData *)sizeByinchWithWidth:(double)m andHeight:(double)n;
 
-/// Defines the label width and height in dots.
 /// Sets the width and height of the label paper (unit: dots)
 /// @param m Label width
 /// @param n Label height
 /// @return Data command
 + (NSData *)sizeBydotWithWidth:(int)m andHeight:(int)n;
 
-/// Defines the gap distance between two labels vertically.
 /// Sets the vertical gap distance between labels (unit: millimeters)
 /// @param m Gap distance between two labels
 /// @param n Offset distance of the gap
 /// @return Data command
 + (NSData *)gapBymmWithWidth:(double)m andHeight:(double)n;
 
-/// Defines the gap distance between two labels vertically.
 /// Sets the vertical gap distance between labels (unit: inches)
 /// @param m Gap distance between two labels
 /// @param n Offset distance of the gap
 /// @return Data command
 + (NSData *)gapByinchWithWidth:(double)m andHeight:(double)n;
 
-/// Defines the gap distance between two labels vertically.
 /// Sets the vertical gap distance between labels (unit: dots)
 /// @param m Gap distance between two labels
 /// @param n Offset distance of the gap
 /// @return Data command
 + (NSData *)gapBydotWithWidth:(int)m andHeight:(int)n;
 
-/// Feeds the paper through the gap sensor to determine the paper and gap sizes.
 /// Measures the size of the paper and gap using the gap sensor (unit: dots)
 /// @param x Paper length in dots
 /// @param y Gap length in dots
 /// @return Data command
 + (NSData *)gapDetectWithX:(int)x andY:(int)y;
 
-/// Feeds the paper through the gap sensor to determine the paper and gap sizes.
 /// Feeds the paper to determine the size of the paper and gap
 /// @return Data command
 + (NSData *)gapDetect;
 
-/// Feeds the paper through the black mark sensor to determine the paper and black mark size.
 /// Feeds the paper to determine the size of the paper and black mark (unit: dots)
 /// @param x Paper length in dots
 /// @param y Black mark length in dots
 /// @return Data command
 + (NSData *)blinedDetectWithX:(int)x andY:(int)y;
 
-/// Feeds the paper through the gap/black mark sensor to determine the paper and gap/black mark size.
 /// Feeds the paper to determine the size of the paper and gap/black mark (unit: dots)
 /// @param x Paper length in dots
 /// @param y Gap/Black mark length in dots
 /// @return Data command
 + (NSData *)autoDetectWithX:(int)x andY:(int)y;
 
-/// Sets the height of the black line and the extra label feeding length.
 /// Sets the height of the black line and the additional feeding length for each label (unit: inches)
 /// @param m Height of black line in millimeters
 /// @param n Extra label feeding length
 /// @return Data command
 + (NSData *)blineByinchWithM:(double)m andN:(double)n;
 
-/// Sets the height of the black line and the user-defined extra label feeding length for each feed action.
 /// Sets the height and offset position of the black mark (unit: millimeters)
 /// @param m Height of black line in inches
 /// @param n Extra label feeding length
 /// @return Data command
 + (NSData *)blineBymmWithM:(double)m andN:(double)n;
 
-/// Sets the height of the black line and the user-defined extra label feeding length for each feed action.
 /// Sets the height and offset position of the black mark (unit: dots)
 /// @param m Height of black line in dots
 /// @param n Extra label feeding length
 /// @return Data command
 + (NSData *)blineBydotWithM:(int)m andN:(int)n;
 
-/// Sets the position of the label under the peel-off mode.
 /// Sets the stopping position of each label in peel-off mode (unit: inches)
 /// @param m Offset distance (in inches)
 /// @return Data command
 + (NSData *)offSetByinchWithM:(double)m;
 
-/// Sets the position of the label under the peel-off mode.
 /// Sets the stopping position of each label in peel-off mode (unit: millimeters)
 /// @param m Offset distance (in millimeters)
 /// @return Data command
 + (NSData *)offSetBymmWithM:(double)m;
 
-/// Sets the position of the label under the peel-off mode.
 /// Sets the stopping position of each label in peel-off mode (unit: dots)
 /// @param m Offset distance (in dots)
 /// @return Data command
 + (NSData *)offSetBydotWithM:(int)m;
 
-/// Defines the print speed.
 /// Sets the feeding speed (unit: inches/second)
 /// @param n Printing speed in inches per second
 /// @return Data command
 + (NSData *)speed:(double)n;
 
-/// Sets the printing darkness.
-/// Sets the printing density
+/// Sets the printing density【0, 15】
 /// @param n Specifies the lightest/darkest level
 /// @return Data command
 + (NSData *)density:(int)n;
 
-/// Defines the printout direction and mirror image. This will be stored in the printer memory.
 /// Defines the direction of paper output during printing
-/// @param n 0 or 1, please refer to the illustrations below.
+/// @param n The direction of paper output, which can be one of the following values:
+///
+/// | Value | Direction     |
+/// |-------|---------------|
+/// | 0     | Forward       |
+/// | 1     | Reverse       |
+///
 /// @return Data command
 + (NSData *)direction:(int)n;
 
-/// Defines the reference point of the label. The reference (origin) point varies with the print direction.
+
 /// Defines the reference coordinates for the label
 /// @param x Horizontal coordinate (in dots)
 /// @param y Vertical coordinate (in dots)
 /// @return Data command
 + (NSData *)referenceWithX:(int)x andY:(int)y;
 
-/// Moves the label's vertical position.
 /// Moves the vertical position of the label
 /// @param n The maximum value is 1 inch. For 200 dpi printers, this range is -203 to 203; for 300 dpi printers, the range is -300 to 300. This unit is dots.
 /// @return Data command
 + (NSData *)shift:(int)n;
 
-/// Orients the keyboard for use in different countries via defining special characters on the KP-200 series portable LCD keyboard (option).
 /// Used to select international character set
-/// @param countryCoding The keyboard for use in different countries via defining special characters
+/// @param countryCoding The keyboard for use in different countries via defining special characters.
+/// The `countryCoding` parameter should be one of the following values:
+///
+/// | Constant                        | Description                 |
+/// |----------------------------------|-----------------------------|
+/// | `kCountryUSA`                    | USA                         |
+/// | `kCountryCanadianFrench`         | Canadian French             |
+/// | `kCountrySpanishLatinAmerica`    | Spanish Latin America       |
+/// | `kCountryDutch`                  | Dutch                       |
+/// | `kCountryBelgian`                | Belgian                     |
+/// | `kCountryFranceFrench`           | France French               |
+/// | `kCountrySpainSpanish`           | Spain Spanish               |
+/// | `kCountryHungarian`              | Hungarian                   |
+/// | `kCountryYugoslavian`            | Yugoslavian                 |
+/// | `kCountryItalian`                | Italian                     |
+/// | `kCountrySwitzerland`            | Switzerland                 |
+/// | `kCountrySlovak`                 | Slovak                      |
+/// | `kCountryUnitedKingdom`          | United Kingdom              |
+/// | `kCountryDanish`                 | Danish                      |
+/// | `kCountrySwedish`                | Swedish                     |
+/// | `kCountryNorwegian`              | Norwegian                   |
+/// | `kCountryPolish`                 | Polish                      |
+/// | `kCountryGerman`                 | German                      |
+/// | `kCountryBrazil`                 | Brazil                      |
+/// | `kCountryEnglishInternational`   | English International        |
+/// | `kCountryPortuguese`             | Portuguese                  |
+/// | `kCountryFinnish`                | Finnish                     |
+///
 /// @return Data command
 + (NSData *)country:(NSString *)countryCoding;
 
-/// Orients the keyboard for use in different countries via defining special characters on the KP-200 series portable LCD keyboard (option).
 /// Specifies character encoding
 /// @param str The name of codepage
 /// @return Data command
 + (NSData *)codePage:(NSString *)str;
 
-/// Clears the image buffer.
 /// Clears the image buffer
 /// @return Data command
 + (NSData *)cls;
 
-/// Feeds label with the specified length. The length is specified by dots.
 /// Controls the feeding distance, unit: dot
-/// @param n The length label feeds
+/// @param n The length label feeds【1，9999】
 /// @return Data command
 + (NSData *)feed:(int)n;
 
-/// Feeds the label in reverse. The length is specified by dots.
 /// Feeds the label in reverse, unit: dot
-/// @param n The length label feeds in reverse
+/// @param n The length label feeds in reverse【1，9999】
 /// @return Data command
 + (NSData *)backFeed:(int)n;
 
@@ -213,19 +228,16 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
 /// @return Data command
 + (NSData *)cut;
 
-/// This command is used to stop feeding paper while feeding paper wrong.
 /// Stops feeding paper when feeding error occurs
 /// @param n The limit length of wrong (in inch)
 /// @return Data command
 + (NSData *)limitFeedByinch:(double)n;
 
-/// This command is used to stop feeding paper while feeding paper wrong.
 /// Stops feeding paper when feeding error occurs
 /// @param n The limit length of wrong (in mm)
 /// @return Data command
 + (NSData *)limitFeedBymm:(double)n;
 
-/// This command is used to stop feeding paper while feeding paper wrong.
 /// Stops feeding paper when feeding error occurs
 /// @param n The limit length of wrong (in dots)
 /// @return Data command
@@ -267,11 +279,49 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
 /// @return Data command
 + (NSData *)barWithX:(int)x andY:(int)y andWidth:(int)w andHeight:(int)h;
 
-/// This command prints 1D barcodes.
 /// Draws a 1D barcode
 /// @param x Specify the x-coordinate
 /// @param y Specify the y-coordinate
-/// @param codetype Type of barcode
+/// @param codetype The type of barcode, which can be one of the following values:
+///
+/// | Constant                       | Description                                      |
+/// |---------------------------------|--------------------------------------------------|
+/// | kBarcodeTypeCode128             | Code 128, switching code subset automatically    |
+/// | kBarcodeTypeCode128Manual       | Code 128, switching code subset manually         |
+/// | kBarcodeTypeEAN128              | EAN128, switching code subset automatically      |
+/// | kBarcodeTypeInterleaved25       | Interleaved 2 of 5                               |
+/// | kBarcodeTypeInterleaved25C      | Interleaved 2 of 5 with check digit              |
+/// | kBarcodeTypeCode39              | Code 39, switching standard and full ASCII mode  |
+/// | kBarcodeTypeCode39C             | Code 39 with check digit                        |
+/// | kBarcodeTypeCode93              | Code 93                                          |
+/// | kBarcodeTypeEAN13               | EAN 13                                           |
+/// | kBarcodeTypeEAN13_2             | EAN 13 with 2 digits add-on                      |
+/// | kBarcodeTypeEAN13_5             | EAN 13 with 5 digits add-on                      |
+/// | kBarcodeTypeEAN8                | EAN 8                                            |
+/// | kBarcodeTypeEAN8_2              | EAN 8 with 2 digits add-on                       |
+/// | kBarcodeTypeEAN8_5              | EAN 8 with 5 digits add-on                       |
+/// | kBarcodeTypeCodabar             | Codabar                                          |
+/// | kBarcodeTypePostnet             | Postnet                                          |
+/// | kBarcodeTypeUPCA                | UPC-A                                            |
+/// | kBarcodeTypeUPCA_2              | UPC-A with 2 digits add-on                       |
+/// | kBarcodeTypeUPCA_5              | UPC-A with 5 digits add-on                       |
+/// | kBarcodeTypeUPCE                | UPC-E                                            |
+/// | kBarcodeTypeUPCE_2              | UPC-E with 2 digits add-on                       |
+/// | kBarcodeTypeUPCE_5              | UPC-E with 5 digits add-on                       |
+/// | kBarcodeTypeCpost               | China post                                       |
+/// | kBarcodeTypeMSI                 | MSI                                              |
+/// | kBarcodeTypeMSIC                | MSI with check digit                             |
+/// | kBarcodeTypePlessey             | PLESSEY                                          |
+/// | kBarcodeTypeITF14               | ITF14                                            |
+/// | kBarcodeTypeEAN14               | EAN14                                            |
+/// | kBarcodeTypeCode11              | Code 11                                          |
+/// | kBarcodeTypeTelepen             | Telepen                                          |
+/// | kBarcodeTypeTelepenN            | Telepen number                                   |
+/// | kBarcodeTypePlanet              | Planet                                           |
+/// | kBarcodeTypeCode49              | Code 49                                          |
+/// | kBarcodeTypeDPIIdentcode        | Deutsche Post Identcode                          |
+/// | kBarcodeTypeDPILeitcode         | Deutsche Post Leitcode                           |
+///
 /// @param height Height of barcode
 /// @param readable HRI readable, 0-3
 /// @param rotation Graphic rotation, 0-90-180-270
@@ -291,14 +341,17 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
              andContent:(NSString *)content
           usStrEnCoding:(NSStringEncoding)strEnCoding;
 
-/// This command draws bitmap images.
 /// Draws a bitmap image
 /// @param x Specify the x-coordinate
 /// @param y Specify the y-coordinate
-/// @param mode Graphic modes listed below:
-///             0: OVERWRITE
-///             1: OR
-///             2: XOR
+/// @param mode Graphic mode, which can be one of the following values:
+///
+/// | Value | Mode       | Description                            |
+/// |-------|------------|----------------------------------------|
+/// | 0     | OVERWRITE  | Overwrites the current graphic content |
+/// | 1     | OR         | Combines with the current graphic      |
+/// | 2     | XOR        | Inverts pixels of the current graphic  |
+///
 /// @param image The graphic you want to print
 /// @return Data command
 + (NSData *)bitmapWithX:(int)x
@@ -306,7 +359,7 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
                andMode:(int)mode
               andImage:(UIImage *)image;
 
-/// This command draws rectangles on the label.
+
 /// Draws a rectangle
 /// @param x Specify x-coordinate of upper left corner (in dots)
 /// @param y Specify y-coordinate of upper left corner (in dots)
@@ -320,7 +373,6 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
              andEndY:(int)y_end
         andThickness:(int)thickness;
 
-/// This command draws an ellipse on the label.
 /// Draws an ellipse
 /// @param x Specify x-coordinate of upper left corner (in dots)
 /// @param y Specify y-coordinate of upper left corner (in dots)
@@ -334,7 +386,6 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
                andHeight:(int)height
             andThickness:(int)thickness;
 
-/// This command draws CODEBLOCK F mode barcode.
 /// Draws CODEBLOCK F mode barcode
 /// @param x Specify the x-coordinate
 /// @param y Specify the y-coordinate
@@ -346,7 +397,6 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
                     andRotation:(int)rotation
                      andContent:(NSString *)content;
 
-/// This command draws a DataMatrix 2D barcode.
 /// Draws a DataMatrix 2D barcode
 /// @param x Specify x-coordinate of upper left corner (in dots)
 /// @param y Specify y-coordinate of upper left corner (in dots)
@@ -362,7 +412,6 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
               andContent:(NSString *)content
            usStrEnCoding:(NSStringEncoding)strEnCoding;
 
-/// This command clears a specified region in the image buffer.
 /// Clears the specified region in the image buffer
 /// @param x The x-coordinate of the starting point (in dots)
 /// @param y The y-coordinate of the starting point (in dots)
@@ -374,7 +423,6 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
               andWidth:(int)width
              andHeight:(int)height;
 
-/// This command defines a PDF417 2D barcode.
 /// Draws a PDF417 2D barcode
 /// @param x The x-coordinate
 /// @param y The y-coordinate
@@ -403,7 +451,6 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
             andFileName:(NSString *)filename
             andContrast:(int)contrast;
 
-/// This command prints BMP format images.
 /// Prints BMP format images
 /// @param x The x-coordinate of the BMP format image
 /// @param y The y-coordinate of the BMP format image
@@ -413,7 +460,6 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
                    andY:(int)y
             andFileName:(NSString *)filename;
 
-/// This command prints PCX format images.
 /// Prints PCX format images
 /// @param x The x-coordinate of the PCX format image
 /// @param y The y-coordinate of the PCX format image
@@ -423,14 +469,35 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
                    andY:(int)y
             andFileName:(NSString *)filename;
 
-/// This command prints QR code.
 /// Prints a QR code
 /// @param x The upper left corner x-coordinate of the QR code
 /// @param y The upper left corner y-coordinate of the QR code
-/// @param ecclevel Error correction recovery level
+/// @param ecclevel Error correction recovery level, which can be one of the following values:
+///
+/// | Value | Level | Description                              |
+/// |-------|-------|------------------------------------------|
+/// | `kECCLevelL` | L     | Error Correction Level L (7%)            |
+/// | `kECCLevelM` | M     | Error Correction Level M (15%)           |
+/// | `kEECLevelQ` | Q     | Error Correction Level Q (25%)           |
+/// | `kEECLevelH` | H     | Error Correction Level H (30%)           |
+///
 /// @param cellwidth Width of each cell (1~10)
-/// @param mode A or M
-/// @param rotation Rotation angle (0, 90, 180, 270)
+/// @param mode QR code generation mode, which can be one of the following values:
+///
+/// | Value        | Mode    | Description             |
+/// |--------------|---------|-------------------------|
+/// | `kQRCodeModeAuto`   | Auto    | Auto-generate QR Code  |
+/// | `kQRCodeModeManual` | Manual  | Manually generate QR Code |
+///
+/// @param rotation Rotation angle, which can be one of the following values:
+///
+/// | Value | Rotation   | Description                    |
+/// |-------|------------|--------------------------------|
+/// | `TSPLRotation0`   | 0        | No Rotation                    |
+/// | `TSPLRotation90`  | 90       | Rotate 90 degrees clockwise    |
+/// | `TSPLRotation180` | 180      | Rotate 180 degrees clockwise   |
+/// | `TSPLRotation270` | 270      | Rotate 270 degrees clockwise   |
+///
 /// @param content The content of the QR code
 /// @param strEnCoding The encoding of content
 /// @return Data command
@@ -443,7 +510,7 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
              andContent:(NSString *)content
           usStrEnCoding:(NSStringEncoding)strEnCoding;
 
-/// This command reverses a region in the image buffer.
+
 /// This command inverts the specified region in the image buffer.
 /// @param x The x-coordinate of the starting point (in dots)
 /// @param y The y-coordinate of the starting point (in dots)
@@ -454,16 +521,39 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
                 andWidth:(int)width
                andHeight:(int)height;
 
-/// This command prints text on the label.
 /// Prints text on the label.
 /// @param x The x-coordinate of the text
 /// @param y The y-coordinate of the text
-/// @param font Font name
-/// @param rotation Rotation angle of the text
-/// @param x_mul Horizontal multiplication, up to 10x
-/// @param y_mul Vertical multiplication, up to 10x
+/// @param font Font name, which can be one of the following values:
+///
+/// | Value                        | Description                             |
+/// |------------------------------|-----------------------------------------|
+/// | `kFNT_8_12`                  | 8 x 12 Alphanumeric Font                |
+/// | `kFNT_12_20`                 | 12 x 20 Alphanumeric Font               |
+/// | `kFNT_16_24`                 | 16 x 24 Alphanumeric Font               |
+/// | `kFNT_24_32`                 | 24 x 32 Alphanumeric Font               |
+/// | `kFNT_32_48`                 | 32 x 48 Alphanumeric Font               |
+/// | `kFNT_14_19`                 | 14 x 19 OCR-B Alphanumeric Font         |
+/// | `kFNT_14_25`                 | 14 x 25 OCR-A Alphanumeric Font         |
+/// | `kFNT_21_27`                 | 21 x 27 OCR-B Alphanumeric Font         |
+/// | `kFNT_SIMPLIFIED_CHINESE`     | Simplified Chinese 24x24 Font (GB Code) |
+/// | `kFNT_TRADITIONAL_CHINESE`    | Traditional Chinese 24x24 Font (Big Five Code) |
+/// | `kFNT_KOREAN`                | Korean 24x24 Font (KS Code)             |
+///
+/// @param rotation Rotation angle of the text, which can be one of the following values:
+///
+/// | Value               | Rotation   | Description                    |
+/// |---------------------|------------|--------------------------------|
+/// | `TSPLRotation0`     | 0          | No Rotation                    |
+/// | `TSPLRotation90`    | 90         | Rotate 90 degrees clockwise    |
+/// | `TSPLRotation180`   | 180        | Rotate 180 degrees clockwise   |
+/// | `TSPLRotation270`   | 270        | Rotate 270 degrees clockwise   |
+///
+/// @param x_mul Text horizontal magnification ratio, range [1, 10]
+/// @param y_mul Text vertical magnification ratio, range [1, 10]
 /// @param content The content of the text string
 /// @param strEnCoding The encoding of the content string
+/// @return Data command
 + (NSData *)textWithX:(int)x
                  andY:(int)y
               andFont:(NSString *)font
@@ -473,18 +563,41 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
            andContent:(NSString *)content
         usStrEnCoding:(NSStringEncoding)strEnCoding;
 
-/// This command prints a paragraph on the label.
 /// Prints a paragraph on the label.
 /// @param x The x-coordinate of the paragraph
 /// @param y The y-coordinate of the paragraph
 /// @param width The width of the paragraph (in dots)
 /// @param height The height of the paragraph (in dots)
-/// @param font Font name
-/// @param rotation Rotation angle of the paragraph
-/// @param x_mul Horizontal multiplication, up to 10x
-/// @param y_mul Vertical multiplication, up to 10x
+/// @param font Font name, which can be one of the following values:
+///
+/// | Value                         | Description                             |
+/// |-------------------------------|-----------------------------------------|
+/// | `kFNT_8_12`                   | 8 x 12 Alphanumeric Font                |
+/// | `kFNT_12_20`                  | 12 x 20 Alphanumeric Font               |
+/// | `kFNT_16_24`                  | 16 x 24 Alphanumeric Font               |
+/// | `kFNT_24_32`                  | 24 x 32 Alphanumeric Font               |
+/// | `kFNT_32_48`                  | 32 x 48 Alphanumeric Font               |
+/// | `kFNT_14_19`                  | 14 x 19 OCR-B Alphanumeric Font         |
+/// | `kFNT_14_25`                  | 14 x 25 OCR-A Alphanumeric Font         |
+/// | `kFNT_21_27`                  | 21 x 27 OCR-B Alphanumeric Font         |
+/// | `kFNT_SIMPLIFIED_CHINESE`      | Simplified Chinese 24x24 Font (GB Code) |
+/// | `kFNT_TRADITIONAL_CHINESE`     | Traditional Chinese 24x24 Font (Big Five Code) |
+/// | `kFNT_KOREAN`                 | Korean 24x24 Font (KS Code)             |
+///
+/// @param rotation Rotation angle of the paragraph, which can be one of the following values:
+///
+/// | Value              | Rotation   | Description                    |
+/// |--------------------|------------|--------------------------------|
+/// | `TSPLRotation0`     | 0          | No Rotation                    |
+/// | `TSPLRotation90`    | 90         | Rotate 90 degrees clockwise    |
+/// | `TSPLRotation180`   | 180        | Rotate 180 degrees clockwise   |
+/// | `TSPLRotation270`   | 270        | Rotate 270 degrees clockwise   |
+///
+/// @param x_mul Text horizontal magnification ratio, range [1, 10]
+/// @param y_mul Text vertical magnification ratio, range [1, 10]
 /// @param content The content of the paragraph
 /// @param strEnCoding The encoding of the content string
+/// @return Data command
 + (NSData *)blockWithX:(int)x
                   andY:(int)y
               andWidth:(int)width
@@ -496,23 +609,19 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
              andContent:(NSString *)content
          usStrEnCoding:(NSStringEncoding)strEnCoding;
 
-/// This command obtains the printer status at any time.
 /// Retrieves the printer status at any time.
 /// @return Data command
 + (NSData *)checkPrinterStatusByPort9100;
 
-/// This command obtains the printer status at any time.
 /// Retrieves the printer status at any time.
 /// @return Data command
 + (NSData *)checkPrinterStatusByPort4000;
 
-/// Download program file.
 /// Downloads a program file.
 /// @param filename The filename to download
 + (NSData *)download:(NSString *)filename;
 
 /// Download text file.
-/// DOWNLOAD "FILENAME", DATASIZE, CONTENT
 /// @param filename The filename to download
 /// @param size The size of the data
 /// @param content The content of the file
@@ -521,65 +630,68 @@ typedef NS_ENUM (NSUInteger, AutoResponse) {
           andContent:(NSString *)content;
 
 /// Download text file from a specified path.
-/// DOWNLOAD "FILENAME", FILE SIZE, DATA CONTENT
 /// @param filename The filename to download
 /// @param url The file URL
 + (NSData *)download:(NSString *)filename
             andPath:(NSURL *)url;
 
-/// End of program, to declare the start and the end of BASIC language used in program.
 /// Marks the end of the program.
 /// @return Data command
 + (NSData *)eop;
 
-/// This command prints out the total memory size, available memory size and file lists in the printer memory.
 /// Retrieves the total memory size, available memory size, and file list in the printer memory.
 /// @return Data command
 + (NSData *)files;
 
-/// This command deletes a file in the printer memory.
 /// Deletes a file from the printer's memory.
 /// @param filename The name of the file to be deleted
 + (NSData *)kill:(NSString *)filename;
 
-/// This command moves downloaded files from DRAM to FLASH memory.
 /// Moves files from DRAM to FLASH memory.
 /// @return Data command
 + (NSData *)move;
 
-/// This command executes a program resident in the printer memory. It is available for TSPL2 printers only.
 /// Executes a program stored in the printer's memory.
 /// @param filename The name of the program file to be executed
 + (NSData *)run:(NSString *)filename;
 
-/// This command sets the printer to automatically return information.
 /// Configures the printer to automatically return information.
-/// @param response The type of auto response to set
+/// @param response The type of auto response to set, which can be one of the following values:
+///
+/// | Value      | Description                                                           |
+/// |------------|-----------------------------------------------------------------------|
+/// | `OFF`      | Disable auto response status function                                 |
+/// | `ON`       | Enable auto response status function, returns once after printing each label |
+/// | `BATCH`    | Enable auto response status function, returns once after all printing is complete |
+///
+/// @return Data command
 + (NSData *)setAutoResponse:(AutoResponse)response;
 
-/// This command draws bitmap images.
 /// Draws a bitmap image.
 /// @param x The x-coordinate
 /// @param y The y-coordinate
-/// @param mode Graphic modes listed below:
-///             0: OVERWRITE
-///             1: OR
-///             2: XOR
-///             3: OVERWRITE + zlib
-///             4: OR + zlib
-///             5: XOR + zlib
+/// @param mode The graphic mode to use, which can be one of the following:
+///
+/// | Value | Description             |
+/// |-------|-------------------------|
+/// | 0     | OVERWRITE               |
+/// | 1     | OR                      |
+/// | 2     | XOR                     |
+/// | 3     | OVERWRITE + zlib        |
+/// | 4     | OR + zlib               |
+/// | 5     | XOR + zlib              |
+///
 /// @param image The graphic you want to print
+/// @return Data command
 + (NSData *)zlibBitmapWithX:(int)x
                       andY:(int)y
                    andMode:(int)mode
                   andImage:(UIImage *)image;
 
-/// Sets the feature to feed paper to the tear-off position.
 /// Configures whether to feed paper to the tear-off position or stop at the print line.
 /// @param isOpen YES: Feed paper to the tear-off position after printing; NO: Stop at the print line after printing
 + (NSData *)setTear:(BOOL)isOpen;
 
-/// Sets the feature to enable/disable the automatic peeler.
 /// Configures whether to enable or disable the automatic peeler.
 /// @param isOpen YES: Enable the automatic peeler; NO: Disable the automatic peeler
 + (NSData *)setPeel:(BOOL)isOpen;

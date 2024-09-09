@@ -117,7 +117,11 @@ typedef void (^TSCBLEPrinterSNBlock)(NSString *sn);
 /// Removes all delegates
 - (void)removeAllDelegates;
 
-/// Starts scanning for peripherals
+/// Starts scanning for Bluetooth peripherals.
+/// This method should be triggered after confirming that Bluetooth is enabled and authorized.
+/// It is recommended to invoke this method within the delegate callback
+/// - (void)TSCbleCentralManagerDidUpdateState:(NSInteger)state;
+/// when the state indicates that Bluetooth is powered on and authorized for use.
 - (void)startScan;
 
 /// Stops scanning for peripherals
@@ -149,7 +153,21 @@ typedef void (^TSCBLEPrinterSNBlock)(NSString *sn);
 + (NSString *)GetCopyRight;
 
 /// Retrieves the printer status
-/// @param statusBlock Block to be called with the printer status
+///
+/// | Label Printer Status                    | Description                          | Value    |
+/// |-----------------------------------------|--------------------------------------|----------|
+/// | `LabelPrinterReady`                     | Printer is ready                     | `0x00`   |
+/// | `LabelPrinterCoverOpened`               | Cover is opened                      | `0x01`   |
+/// | `LabelPrinterPaperJam`                  | Paper jam detected                   | `0x02`   |
+/// | `LabelPrinterCoverOpenedAndPaperJam`    | Cover is opened and paper jam         | `0x03`   |
+/// | `LabelPrinterPaperEnd`                  | Out of paper                         | `0x04`   |
+/// | `LabelPrinterCoverOpenedAndPaperEnd`    | Cover is opened and out of paper      | `0x05`   |
+/// | `LabelPrinterNoRibbon`                  | No ribbon detected                   | `0x08`   |
+/// | `LabelPrinterCoverOpenedAndNoRibbon`    | Cover is opened and no ribbon         | `0x09`   |
+/// | `LabelPrinterPause`                     | Printer is paused                    | `0x10`   |
+/// | `LabelPrinterPrinting`                  | Printer is printing                  | `0x20`   |
+///
+/// @param statusBlock Block to be called with the printer status (see table above)
 - (void)printerStatus:(TSCBLEPrinterStatusBlock)statusBlock;
 
 /// Sends data in specified package sizes and reports progress via a completion handler

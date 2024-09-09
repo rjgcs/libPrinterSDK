@@ -105,9 +105,7 @@ typedef void (^POSBLEPrinterCheckBlock)(NSData *check);
 /// Completion block for write operations.
 @property (nonatomic, copy) void (^writeCompletion)(BOOL success, NSUInteger totalBytesSent, NSUInteger currentPackageIndex, NSError *error);
 
-/**
- *  Returns the shared instance of the manager.
- */
+/// Returns the shared instance of the manager.
 + (instancetype)sharedInstance;
 
 /// Removes a specific delegate.
@@ -117,7 +115,11 @@ typedef void (^POSBLEPrinterCheckBlock)(NSData *check);
 /// Removes all delegates.
 - (void)removeAllDelegates;
 
-/// Starts scanning for peripherals.
+/// Starts scanning for Bluetooth peripherals.
+/// This method should be triggered after confirming that Bluetooth is enabled and authorized.
+/// It is recommended to invoke this method within the delegate callback
+/// - (void)POSbleCentralManagerDidUpdateState:(NSInteger)state;
+/// when the state indicates that Bluetooth is powered on and authorized for use.
 - (void)startScan;
 
 /// Stops scanning for peripherals.
@@ -155,10 +157,28 @@ typedef void (^POSBLEPrinterCheckBlock)(NSData *check);
 
 /// Queries the current printer status (normal/out of paper/open cover, etc.).
 /// @param statusBlock The block to execute with the printer status.
+///
+/// | Enum Value                      | Description                            | Hex Value |
+/// |----------------------------------|----------------------------------------|-----------|
+/// | POSPrinterNormal                 | Printer is in normal status            | 0x12      |
+/// | POSPrinterCoverOpened            | Printer cover is opened                | 0x16      |
+/// | POSPrinterPaperEnd               | Printer is out of paper                | 0x32      |
+/// | POSPrinterCoverOpenedAndPaperEnd | Cover is opened and printer is out of paper | 0x36  |
+/// | POSPrinterFeeding                | Printer is feeding paper               | 0x1A      |
+/// | POSPrinterCashBoxOpen            | Cash box is open                       | 0x00      |
+/// | POSPrinterCashBoxClosed          | Cash box is closed                     | 0x01      |
 - (void)printerStatus:(POSBLEPrinterStatusBlock)statusBlock;
 
 /// Queries all printer statuses.
 /// @param type The type of status to check.
+///
+/// | Enum Value                      | Description             | Hex Value |
+/// |----------------------------------|-------------------------|-----------|
+/// | POSPrinterStatusTypePrint        | Print status            | 0x01      |
+/// | POSPrinterStatusTypeOffline      | Offline status          | 0x02      |
+/// | POSPrinterStatusTypeError        | Error status            | 0x03      |
+/// | POSPrinterStatusTypePaper        | Paper transmission status | 0x04      |
+///
 /// @param checkBlock The block to execute with the check results.
 - (void)printerCheck:(int)type checkBlock:(POSBLEPrinterCheckBlock)checkBlock;
 

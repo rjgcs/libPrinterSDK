@@ -10,4 +10,5 @@
 #import "POSBLEManager.h"
 #import "POSWIFIManager.h"
 #import "POSCommand.h"
-#endif /* POSPrinterSDK_h */
+
+#endif
