@@ -28,14 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		26B3C78FFA65D4A4AA86290A8CEDCE2E /* PBXContainerItemProxy */ = {
+		019D7F6F9F56DC64628E5443DCBD54C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3B0CF62692B05D47174711A68975881E;
 			remoteInfo = libPrinterSDK;
 		};
-		81D49D87AC782645704786CC2FC64FC8 /* PBXContainerItemProxy */ = {
+		05BA2304BED8A0B215D993030C336DCE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -45,50 +45,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02F927FCBA212EA45FA1E339D281C67A /* WIFIConnecter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WIFIConnecter.h; path = Framework/libPrinterSDK.framework/Headers/WIFIConnecter.h; sourceTree = "<group>"; };
+		0318181D3EEA2A130999247A5BA99AB1 /* XPOSCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XPOSCommand.h; path = Framework/Headers/XPOSCommand.h; sourceTree = "<group>"; };
+		0755489317FD10EAD4E8CF4427A8C664 /* XWIFIManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XWIFIManager.h; path = Framework/Headers/XWIFIManager.h; sourceTree = "<group>"; };
 		0BFDA14F9E4550318724AB24B0D5A9A0 /* Pods-libPrinterSDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-libPrinterSDK_Example-umbrella.h"; sourceTree = "<group>"; };
-		103090A77EE9F3444780326AC2A713C3 /* POSImageTranster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POSImageTranster.h; path = Framework/libPrinterSDK.framework/Headers/POSImageTranster.h; sourceTree = "<group>"; };
+		147C7997482C42A3F9E271F79DB55762 /* libPrinterSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = libPrinterSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1CBF4E269E415FFBE4449D797C3290C5 /* Pods-libPrinterSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-libPrinterSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		1ED81C430869A1BE38ADFCE50086E73E /* Pods-libPrinterSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-libPrinterSDK_Tests.modulemap"; sourceTree = "<group>"; };
 		20484E33387A6CEE872315055F551E60 /* Pods-libPrinterSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-libPrinterSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		22A240AB06437006DC15F492EC45F907 /* Pods-libPrinterSDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-libPrinterSDK_Example-dummy.m"; sourceTree = "<group>"; };
-		23A9EB07C6A96507F71281D4EE60D80B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		2BCD76B57A0AA26E4332EDCC9CEBE857 /* XAdvProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XAdvProtocol.h; path = Framework/Headers/XAdvProtocol.h; sourceTree = "<group>"; };
+		2BD525FC8B8BD5A3CF4B795084FBB317 /* XAccessory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XAccessory.h; path = Framework/Headers/XAccessory.h; sourceTree = "<group>"; };
 		2E76F2BE0E2EEC26AA5E257F99A8C354 /* Pods-libPrinterSDK_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-libPrinterSDK_Example"; path = Pods_libPrinterSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FCEFF5C82BB6D0521C9D2FF34F05326 /* TSCBLEManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSCBLEManager.h; path = Framework/libPrinterSDK.framework/Headers/TSCBLEManager.h; sourceTree = "<group>"; };
 		361D29CBEA607DCEF9A65B32618003B7 /* Pods-libPrinterSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-libPrinterSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3E1E8B85BC199F386E0DAA60F3BFAEAD /* Pods-libPrinterSDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-libPrinterSDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3FF9AE726D932A2A32551DF320A191D7 /* POSWIFIManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POSWIFIManager.h; path = Framework/libPrinterSDK.framework/Headers/POSWIFIManager.h; sourceTree = "<group>"; };
-		5341E05959ADF3C663F20F38F0BB8216 /* ZPLCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZPLCommand.h; path = Framework/libPrinterSDK.framework/Headers/ZPLCommand.h; sourceTree = "<group>"; };
 		562CEF827211A1CD91609760CC4EB445 /* Pods-libPrinterSDK_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-libPrinterSDK_Tests"; path = Pods_libPrinterSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F9C4A936E7273573CAD7B50125287D3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		61F69991E23B458E5B0A3FCB5A55064B /* LabelDocument.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LabelDocument.h; path = Framework/libPrinterSDK.framework/Headers/LabelDocument.h; sourceTree = "<group>"; };
+		5EE0EE15605EE1D36DFE1FEDDFF15F11 /* XCPCLCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCPCLCommand.h; path = Framework/Headers/XCPCLCommand.h; sourceTree = "<group>"; };
 		63A3395FD88E09D03D5C8FAD17300E2D /* Pods-libPrinterSDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-libPrinterSDK_Tests-umbrella.h"; sourceTree = "<group>"; };
-		63F7AA094EF11270E18D25D1933C23AC /* PrinterProfile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrinterProfile.h; path = Framework/libPrinterSDK.framework/Headers/PrinterProfile.h; sourceTree = "<group>"; };
-		64B4CBA4CAE79C80B2727F2AB5F15550 /* libPrinterSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = libPrinterSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		6F1E04DC7879323148539F4C70F72599 /* CPCLCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPCLCommand.h; path = Framework/libPrinterSDK.framework/Headers/CPCLCommand.h; sourceTree = "<group>"; };
-		6FFA4FF7EF2527BD16A2C9E53FD1560B /* TSCPrinterSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSCPrinterSDK.h; path = Framework/libPrinterSDK.framework/Headers/TSCPrinterSDK.h; sourceTree = "<group>"; };
+		65586A909C72C51FBDB6C0BB347FA5F4 /* XBLEManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XBLEManager.h; path = Framework/Headers/XBLEManager.h; sourceTree = "<group>"; };
+		66357BFD23F8A114CA6DFF45CDC3614D /* XTSPLCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XTSPLCommand.h; path = Framework/Headers/XTSPLCommand.h; sourceTree = "<group>"; };
+		6648DA766CDABEECA809FFD3884B450F /* NetProfile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NetProfile.h; path = Framework/Headers/NetProfile.h; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		79FCB0C5D5F2A19E7BF0EDB791EF82F7 /* Pods-libPrinterSDK_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-libPrinterSDK_Tests-Info.plist"; sourceTree = "<group>"; };
-		907E8C4D07F9272E367056594FB8E4F7 /* TSCWIFIManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSCWIFIManager.h; path = Framework/libPrinterSDK.framework/Headers/TSCWIFIManager.h; sourceTree = "<group>"; };
-		921257E86B775D13531A840539F6956B /* PTable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTable.h; path = Framework/libPrinterSDK.framework/Headers/PTable.h; sourceTree = "<group>"; };
 		93CC7FF1A5433EEB66D4319F15DA9DB9 /* Pods-libPrinterSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-libPrinterSDK_Example.modulemap"; sourceTree = "<group>"; };
 		9D51AFD1BF242C2D969B17C84F93E3E2 /* Pods-libPrinterSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-libPrinterSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A3F520B5B8C5E2C07E3C46D76466E1E0 /* POSPrinterSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POSPrinterSDK.h; path = Framework/libPrinterSDK.framework/Headers/POSPrinterSDK.h; sourceTree = "<group>"; };
-		A4C6C96EAB79C317579373C1B7620E5D /* POSCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POSCommand.h; path = Framework/libPrinterSDK.framework/Headers/POSCommand.h; sourceTree = "<group>"; };
-		A65DEC1D90A2DD1D0440DDEEE420389A /* POSPrinter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POSPrinter.h; path = Framework/libPrinterSDK.framework/Headers/POSPrinter.h; sourceTree = "<group>"; };
-		A77214DDCD285B0DD4BCDD4E79BCD7C6 /* libPrinterSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libPrinterSDK.debug.xcconfig; sourceTree = "<group>"; };
-		AB2E3744A116D7BE0A3634CEF61D1278 /* TSCCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSCCommand.h; path = Framework/libPrinterSDK.framework/Headers/TSCCommand.h; sourceTree = "<group>"; };
-		AC612432F0F0088B2851E8C8FF533D14 /* libPrinterSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libPrinterSDK.release.xcconfig; sourceTree = "<group>"; };
-		C331F4D515BE9A0062E00C9E95074B24 /* libPrinterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libPrinterSDK.framework; path = Framework/libPrinterSDK.framework; sourceTree = "<group>"; };
+		A2BAA151F5AA06EC2F19EB30F00421D5 /* libPrinterSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libPrinterSDK.release.xcconfig; sourceTree = "<group>"; };
+		A408B4E3919C998B81A17CEA8C19E03F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		B0AB62A82E2B5AFE2566B4C6DD996452 /* XZPLCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XZPLCommand.h; path = Framework/Headers/XZPLCommand.h; sourceTree = "<group>"; };
+		B426BAA374929D9FED6444991C73E5C1 /* XConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XConstants.h; path = Framework/Headers/XConstants.h; sourceTree = "<group>"; };
 		C845B743214CF90108E12D91F10BE5D7 /* Pods-libPrinterSDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-libPrinterSDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		C939DA3BF19E2052C94F2CCA53C938AE /* Pods-libPrinterSDK_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-libPrinterSDK_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D22729AAA69B3C19F307055C514F82A7 /* Pods-libPrinterSDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-libPrinterSDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E1EB02CE6E529215D99C766350BD472D /* POSBLEManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POSBLEManager.h; path = Framework/libPrinterSDK.framework/Headers/POSBLEManager.h; sourceTree = "<group>"; };
 		E2A47F8EB31F9815239E3567DC9DA7CF /* Pods-libPrinterSDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-libPrinterSDK_Tests-dummy.m"; sourceTree = "<group>"; };
-		E4C66502B5FB86AA374A9A2394E13ECA /* LabelImageTranster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LabelImageTranster.h; path = Framework/libPrinterSDK.framework/Headers/LabelImageTranster.h; sourceTree = "<group>"; };
-		EF317E696E6C1DB0D1E89483E5D60DC0 /* KDS_Log.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KDS_Log.h; path = Framework/libPrinterSDK.framework/Headers/KDS_Log.h; sourceTree = "<group>"; };
+		E9B38F444193BE6759503F5E5747957B /* libPrinterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libPrinterSDK.framework; path = Framework/libPrinterSDK.framework; sourceTree = "<group>"; };
+		EEB3E5A57C68CAAF3AFB4F042D03023C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		EFE36D876403648E9D43DEAC5A509B57 /* libPrinterSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libPrinterSDK.debug.xcconfig; sourceTree = "<group>"; };
 		F780E3904D0F0D70DA9E7FBE5B6B0A02 /* Pods-libPrinterSDK_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-libPrinterSDK_Example-Info.plist"; sourceTree = "<group>"; };
+		FC5BB89FE82EE81B1482706E3FD27872 /* XSDKPrinter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XSDKPrinter.h; path = Framework/Headers/XSDKPrinter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,14 +104,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1AE46C043836FE5CDCF7CC5206556E48 /* Support Files */ = {
+		0291FA2DCFE9D5A8F1F3B9A77C53C0BB /* libPrinterSDK */ = {
 			isa = PBXGroup;
 			children = (
-				A77214DDCD285B0DD4BCDD4E79BCD7C6 /* libPrinterSDK.debug.xcconfig */,
-				AC612432F0F0088B2851E8C8FF533D14 /* libPrinterSDK.release.xcconfig */,
+				6648DA766CDABEECA809FFD3884B450F /* NetProfile.h */,
+				2BD525FC8B8BD5A3CF4B795084FBB317 /* XAccessory.h */,
+				2BCD76B57A0AA26E4332EDCC9CEBE857 /* XAdvProtocol.h */,
+				65586A909C72C51FBDB6C0BB347FA5F4 /* XBLEManager.h */,
+				B426BAA374929D9FED6444991C73E5C1 /* XConstants.h */,
+				5EE0EE15605EE1D36DFE1FEDDFF15F11 /* XCPCLCommand.h */,
+				0318181D3EEA2A130999247A5BA99AB1 /* XPOSCommand.h */,
+				FC5BB89FE82EE81B1482706E3FD27872 /* XSDKPrinter.h */,
+				66357BFD23F8A114CA6DFF45CDC3614D /* XTSPLCommand.h */,
+				0755489317FD10EAD4E8CF4427A8C664 /* XWIFIManager.h */,
+				B0AB62A82E2B5AFE2566B4C6DD996452 /* XZPLCommand.h */,
+				31E52555904FB39824EA34DB19DE6403 /* Frameworks */,
+				2EBB5C27B27561C4567F41211A7303C3 /* Pod */,
+				B1487B09BEBE697ADF2EE05A4FA9DC35 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/libPrinterSDK";
+			name = libPrinterSDK;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		2EBB5C27B27561C4567F41211A7303C3 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				147C7997482C42A3F9E271F79DB55762 /* libPrinterSDK.podspec */,
+				A408B4E3919C998B81A17CEA8C19E03F /* LICENSE */,
+				EEB3E5A57C68CAAF3AFB4F042D03023C /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		31E52555904FB39824EA34DB19DE6403 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9B38F444193BE6759503F5E5747957B /* libPrinterSDK.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		565E014361A7E84EDEC65588A13E7186 /* Pods-libPrinterSDK_Example */ = {
@@ -154,19 +177,21 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7B0EF31404FCAC58C21CDFD310845989 /* Frameworks */ = {
+		B1487B09BEBE697ADF2EE05A4FA9DC35 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C331F4D515BE9A0062E00C9E95074B24 /* libPrinterSDK.framework */,
+				EFE36D876403648E9D43DEAC5A509B57 /* libPrinterSDK.debug.xcconfig */,
+				A2BAA151F5AA06EC2F19EB30F00421D5 /* libPrinterSDK.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/libPrinterSDK";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				F25231F87F9570C2890BA80CFF350881 /* Development Pods */,
+				FC7CB467E20053468F37779CEAC494DA /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				D553E8F05C02A2794A4526E4B693742E /* Products */,
 				6B7688926993096D16536DE4EB609019 /* Targets Support Files */,
@@ -179,35 +204,6 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D3D800A057969EDB3775B24305D38619 /* libPrinterSDK */ = {
-			isa = PBXGroup;
-			children = (
-				6F1E04DC7879323148539F4C70F72599 /* CPCLCommand.h */,
-				EF317E696E6C1DB0D1E89483E5D60DC0 /* KDS_Log.h */,
-				61F69991E23B458E5B0A3FCB5A55064B /* LabelDocument.h */,
-				E4C66502B5FB86AA374A9A2394E13ECA /* LabelImageTranster.h */,
-				E1EB02CE6E529215D99C766350BD472D /* POSBLEManager.h */,
-				A4C6C96EAB79C317579373C1B7620E5D /* POSCommand.h */,
-				103090A77EE9F3444780326AC2A713C3 /* POSImageTranster.h */,
-				A65DEC1D90A2DD1D0440DDEEE420389A /* POSPrinter.h */,
-				A3F520B5B8C5E2C07E3C46D76466E1E0 /* POSPrinterSDK.h */,
-				3FF9AE726D932A2A32551DF320A191D7 /* POSWIFIManager.h */,
-				63F7AA094EF11270E18D25D1933C23AC /* PrinterProfile.h */,
-				921257E86B775D13531A840539F6956B /* PTable.h */,
-				2FCEFF5C82BB6D0521C9D2FF34F05326 /* TSCBLEManager.h */,
-				AB2E3744A116D7BE0A3634CEF61D1278 /* TSCCommand.h */,
-				6FFA4FF7EF2527BD16A2C9E53FD1560B /* TSCPrinterSDK.h */,
-				907E8C4D07F9272E367056594FB8E4F7 /* TSCWIFIManager.h */,
-				02F927FCBA212EA45FA1E339D281C67A /* WIFIConnecter.h */,
-				5341E05959ADF3C663F20F38F0BB8216 /* ZPLCommand.h */,
-				7B0EF31404FCAC58C21CDFD310845989 /* Frameworks */,
-				F5B589DE57C7995F405E0EA6E4E97791 /* Pod */,
-				1AE46C043836FE5CDCF7CC5206556E48 /* Support Files */,
-			);
-			name = libPrinterSDK;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		D553E8F05C02A2794A4526E4B693742E /* Products */ = {
@@ -235,22 +231,12 @@
 			path = "Target Support Files/Pods-libPrinterSDK_Tests";
 			sourceTree = "<group>";
 		};
-		F25231F87F9570C2890BA80CFF350881 /* Development Pods */ = {
+		FC7CB467E20053468F37779CEAC494DA /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D3D800A057969EDB3775B24305D38619 /* libPrinterSDK */,
+				0291FA2DCFE9D5A8F1F3B9A77C53C0BB /* libPrinterSDK */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		F5B589DE57C7995F405E0EA6E4E97791 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				64B4CBA4CAE79C80B2727F2AB5F15550 /* libPrinterSDK.podspec */,
-				23A9EB07C6A96507F71281D4EE60D80B /* LICENSE */,
-				5F9C4A936E7273573CAD7B50125287D3 /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +273,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BB23D6EFCAD11DA6DFFE871FC36A64EA /* PBXTargetDependency */,
+				AFC9DCE1CFCB4D2F3559FD2D3403357E /* PBXTargetDependency */,
 			);
 			name = "Pods-libPrinterSDK_Example";
 			productName = Pods_libPrinterSDK_Example;
@@ -306,7 +292,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2476E61B4F64C5AB48F1D2A9BCB1BBB2 /* PBXTargetDependency */,
+				C4DA97D5B9B003EF85D58286AD381766 /* PBXTargetDependency */,
 			);
 			name = "Pods-libPrinterSDK_Tests";
 			productName = Pods_libPrinterSDK_Tests;
@@ -379,17 +365,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2476E61B4F64C5AB48F1D2A9BCB1BBB2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-libPrinterSDK_Example";
-			target = 5CC73A6C2EE70B2BCD1B82B8ADF94EEA /* Pods-libPrinterSDK_Example */;
-			targetProxy = 81D49D87AC782645704786CC2FC64FC8 /* PBXContainerItemProxy */;
-		};
-		BB23D6EFCAD11DA6DFFE871FC36A64EA /* PBXTargetDependency */ = {
+		AFC9DCE1CFCB4D2F3559FD2D3403357E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = libPrinterSDK;
 			target = 3B0CF62692B05D47174711A68975881E /* libPrinterSDK */;
-			targetProxy = 26B3C78FFA65D4A4AA86290A8CEDCE2E /* PBXContainerItemProxy */;
+			targetProxy = 019D7F6F9F56DC64628E5443DCBD54C4 /* PBXContainerItemProxy */;
+		};
+		C4DA97D5B9B003EF85D58286AD381766 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-libPrinterSDK_Example";
+			target = 5CC73A6C2EE70B2BCD1B82B8ADF94EEA /* Pods-libPrinterSDK_Example */;
+			targetProxy = 05BA2304BED8A0B215D993030C336DCE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -428,28 +414,14 @@
 			};
 			name = Release;
 		};
-		32613A1A98733663C474530151F86321 /* Debug */ = {
+		0FA2991DA314F3EA73C4633D85F60638 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A77214DDCD285B0DD4BCDD4E79BCD7C6 /* libPrinterSDK.debug.xcconfig */;
+			baseConfigurationReference = A2BAA151F5AA06EC2F19EB30F00421D5 /* libPrinterSDK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		37AB048B780D9BBA8551A59749BDEEC5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC612432F0F0088B2851E8C8FF533D14 /* libPrinterSDK.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -685,14 +657,28 @@
 			};
 			name = Debug;
 		};
+		FAF099B0D3B60E43BB11BC2E72B8ED68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFE36D876403648E9D43DEAC5A509B57 /* libPrinterSDK.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		10B9805EFAA62D3BD93D052D6E1C01DC /* Build configuration list for PBXAggregateTarget "libPrinterSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				32613A1A98733663C474530151F86321 /* Debug */,
-				37AB048B780D9BBA8551A59749BDEEC5 /* Release */,
+				FAF099B0D3B60E43BB11BC2E72B8ED68 /* Debug */,
+				0FA2991DA314F3EA73C4633D85F60638 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
