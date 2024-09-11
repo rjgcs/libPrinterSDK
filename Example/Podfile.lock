@@ -1,5 +1,5 @@
 PODS:
-  - libPrinterSDK (2.3.5)
+  - libPrinterSDK (2.3.8)
 
 DEPENDENCIES:
   - libPrinterSDK (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  libPrinterSDK: c060bc1c708b519b610d50b37d7aa69aa5048278
+  libPrinterSDK: 0b98de5419f8b9ebea2bf1cba603984f1dd18ea9
 
 PODFILE CHECKSUM: 542c8047aa8ba87dcde5fe825e9f7d3d9991b859
 

@@ -7,7 +7,7 @@
 //
 
 #import "POSViewController.h"
-
+#import "POSBLEManager.h"
 @interface POSViewController ()
 
 @end
