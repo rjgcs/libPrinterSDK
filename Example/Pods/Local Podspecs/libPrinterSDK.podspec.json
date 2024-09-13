@@ -1,6 +1,6 @@
 {
   "name": "libPrinterSDK",
-  "version": "2.3.8",
+  "version": "2.3.9",
   "summary": "A software development kit for printer communication and control.",
   "description": "libPrinterSDK is a software development kit designed for printer operations, offering functions and interfaces for communicating with and controlling printers.",
   "homepage": "https://github.com/rjgcs/libPrinterSDK.git",
@@ -9,11 +9,11 @@
     "file": "LICENSE"
   },
   "authors": {
-    "max": "rj-gcs10@xprinter.net"
+    "max": ""
   },
   "source": {
     "git": "https://github.com/rjgcs/libPrinterSDK.git",
-    "tag": "2.3.8"
+    "tag": "2.3.9"
   },
   "platforms": {
     "ios": "11.0"

@@ -22,7 +22,7 @@ pod 'libPrinterSDK'
 
 ## Author
 
-Apple Mac mini intel, rj-gcs10@xprinter.net
+max
 
 ## License
 
