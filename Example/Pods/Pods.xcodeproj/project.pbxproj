@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = libPrinterSDK;
+			productName = libPrinterSDK;
 		};
 /* End PBXAggregateTarget section */
 
@@ -48,7 +49,7 @@
 		0318181D3EEA2A130999247A5BA99AB1 /* XPOSCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XPOSCommand.h; path = Framework/Headers/XPOSCommand.h; sourceTree = "<group>"; };
 		0755489317FD10EAD4E8CF4427A8C664 /* XWIFIManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XWIFIManager.h; path = Framework/Headers/XWIFIManager.h; sourceTree = "<group>"; };
 		0BFDA14F9E4550318724AB24B0D5A9A0 /* Pods-libPrinterSDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-libPrinterSDK_Example-umbrella.h"; sourceTree = "<group>"; };
-		147C7997482C42A3F9E271F79DB55762 /* libPrinterSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = libPrinterSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		147C7997482C42A3F9E271F79DB55762 /* libPrinterSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = libPrinterSDK.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		1CBF4E269E415FFBE4449D797C3290C5 /* Pods-libPrinterSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-libPrinterSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		1ED81C430869A1BE38ADFCE50086E73E /* Pods-libPrinterSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-libPrinterSDK_Tests.modulemap"; sourceTree = "<group>"; };
 		20484E33387A6CEE872315055F551E60 /* Pods-libPrinterSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-libPrinterSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,9 +69,9 @@
 		79FCB0C5D5F2A19E7BF0EDB791EF82F7 /* Pods-libPrinterSDK_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-libPrinterSDK_Tests-Info.plist"; sourceTree = "<group>"; };
 		93CC7FF1A5433EEB66D4319F15DA9DB9 /* Pods-libPrinterSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-libPrinterSDK_Example.modulemap"; sourceTree = "<group>"; };
 		9D51AFD1BF242C2D969B17C84F93E3E2 /* Pods-libPrinterSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-libPrinterSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A2BAA151F5AA06EC2F19EB30F00421D5 /* libPrinterSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libPrinterSDK.release.xcconfig; sourceTree = "<group>"; };
-		A408B4E3919C998B81A17CEA8C19E03F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		A408B4E3919C998B81A17CEA8C19E03F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B0AB62A82E2B5AFE2566B4C6DD996452 /* XZPLCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XZPLCommand.h; path = Framework/Headers/XZPLCommand.h; sourceTree = "<group>"; };
 		B426BAA374929D9FED6444991C73E5C1 /* XConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XConstants.h; path = Framework/Headers/XConstants.h; sourceTree = "<group>"; };
 		C845B743214CF90108E12D91F10BE5D7 /* Pods-libPrinterSDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-libPrinterSDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -78,7 +79,7 @@
 		D22729AAA69B3C19F307055C514F82A7 /* Pods-libPrinterSDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-libPrinterSDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E2A47F8EB31F9815239E3567DC9DA7CF /* Pods-libPrinterSDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-libPrinterSDK_Tests-dummy.m"; sourceTree = "<group>"; };
 		E9B38F444193BE6759503F5E5747957B /* libPrinterSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libPrinterSDK.framework; path = Framework/libPrinterSDK.framework; sourceTree = "<group>"; };
-		EEB3E5A57C68CAAF3AFB4F042D03023C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		EEB3E5A57C68CAAF3AFB4F042D03023C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EFE36D876403648E9D43DEAC5A509B57 /* libPrinterSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libPrinterSDK.debug.xcconfig; sourceTree = "<group>"; };
 		F780E3904D0F0D70DA9E7FBE5B6B0A02 /* Pods-libPrinterSDK_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-libPrinterSDK_Example-Info.plist"; sourceTree = "<group>"; };
 		FC5BB89FE82EE81B1482706E3FD27872 /* XSDKPrinter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XSDKPrinter.h; path = Framework/Headers/XSDKPrinter.h; sourceTree = "<group>"; };
@@ -518,8 +519,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## libPrinterSDK
 
-Copyright (c) 2024 Apple Mac mini intel <rj-gcs10@xprinter.net>
+Copyright (c) 2024 max
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

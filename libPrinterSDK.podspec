@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'libPrinterSDK'
-  s.version          = '3.0.0'
+  s.version          = '3.0.1'
   s.summary          = 'A software development kit for printer communication and control.'
   s.description      = <<-DESC
 libPrinterSDK is a software development kit designed for printer operations, offering functions and interfaces for communicating with and controlling printers.
@@ -16,7 +16,7 @@ libPrinterSDK is a software development kit designed for printer operations, off
 
   s.homepage         = 'https://github.com/rjgcs/libPrinterSDK.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'max' => 'rj-gcs10@xprinter.net' }
+  s.author           = { 'max' => '' }
   s.source           = { :git => 'https://github.com/rjgcs/libPrinterSDK.git', :tag => "#{s.version}"}
   s.ios.deployment_target = '11.0'
   s.source_files = 'Framework/Headers/*.{h,m}'
